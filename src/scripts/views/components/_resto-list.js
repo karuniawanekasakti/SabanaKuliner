@@ -20,7 +20,7 @@ class RestoList extends HTMLElement {
                         Kota ${resto.city}
                     </span>
                 </div>
-                <img src="${resto.pictureId}" alt="Gambar makanan ${resto.name}">
+                <img src="${resto.pictureId}" alt="Food at${resto.name}">
             </div>
             <div class="card-body">
                 <div class="rating">
@@ -28,7 +28,7 @@ class RestoList extends HTMLElement {
                     <span>${resto.rating}</span>
                 </div>
                 <h3 class="card-title">
-                    <a href="#" title="Link ke halaman detail makanan">${resto.name}</a>
+                    <a href="#" title="Food at ${resto.name}">${resto.name}</a>
                 </h3>
                 <p class="card-text">${resto.description}</p>
             </div>

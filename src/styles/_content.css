@@ -1,15 +1,17 @@
 main {
-  margin: 32px 32px 0;
+  margin: 0 auto;
+  width: 100%;
 }
 
 #content {
   width: 100%;
   margin-top: 1em;
+  padding: 32px;
 }
 
 #content h2 {
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .title-content {
