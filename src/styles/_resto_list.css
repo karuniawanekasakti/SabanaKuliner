@@ -38,16 +38,16 @@
 .col {
   width: 100%;
   border-radius: 5px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .card {
   background-color: #FBFBFB;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
   height: 100%;
   overflow: hidden;
   position: relative;
-  
+  border-radius: 4px;
 }
 
 .card .city-label {

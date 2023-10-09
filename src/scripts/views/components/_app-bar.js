@@ -15,8 +15,8 @@ class AppBar extends HTMLElement {
       </button>
       <ul class="menu-list">
           <li><a href="./" title="Home">Home</a></li>
-          <li><a href="#/favorite" title="Favorite">Favorite</a></li>
-          <li><a href="https://www.linkedin.com/in/virgiawankusuma" title="About Us" target="_blank" rel="noreferrer">About
+          <li><a href="#" title="Favorite">Favorite</a></li>
+          <li><a href="https://github.com/karuniawanekasakti" title="About Us" target="_blank" rel="noreferrer">About
                   Us</a></li>
       </ul>
     </nav>
