@@ -1,0 +1,23 @@
+main {
+  margin: 32px 32px 0;
+}
+
+#content {
+  width: 100%;
+  margin-top: 1em;
+}
+
+#content h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.title-content {
+  border-bottom: 3px solid #E2C275;
+}
+
+.explore {
+  margin: 32px auto;
+  text-align: center;
+}
+

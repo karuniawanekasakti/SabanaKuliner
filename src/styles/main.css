@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap');
+
+@import '_appbar.css';
+@import '_body.css';
+@import '_hero.css';
+@import '_content.css';
+@import '_resto_list.css';
+@import '_responsive.css';
+@import '_footer.css';
+

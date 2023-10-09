@@ -1,0 +1,38 @@
+.hero {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-color: #000;
+}
+
+.hero img {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  /* z-index: 1; */
+  opacity: .5;
+}
+
+.hero .inner {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 32px;
+  z-index: 2;
+}
+
+.hero .title {
+  color: #FBFBFB;
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.hero .subtitle {
+  color: #FBFBFB;
+  margin-top: 10px;
+  font-size: 1.8rem;
+}

@@ -1,0 +1,18 @@
+footer {
+  text-align: center;
+  color: #FBFBFB;
+  background-color: #C36A2D;
+  font-weight: 800;
+  padding: 7vh 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: #FBFBFB;
+}
+
+footer a:hover,
+footer a:active {
+  text-decoration: none;
+  color: #EADCA6;
+}
