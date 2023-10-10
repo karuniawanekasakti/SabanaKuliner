@@ -9,12 +9,12 @@ class AppHero extends HTMLElement {
       <picture>
         <source media="(max-width: 600px)" srcset="../images/heros/hero-image_2.jpg">
         <img src="../images/heros/hero-image_2.jpg"
-          alt="Gambar macam-macam makanan yang diterapkan di komponen hero">
+          alt="Hero Image">
       </picture>
       <div class="inner">
           <h1 class="title">Sabana Kuliner</h1>
           <p class="subtitle">
-              Cari tempat makan terbaik di sekitar Anda
+              Cari Tempat makan Favoritmu Disini
           </p>
       </div>
     </div>
