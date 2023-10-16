@@ -9,6 +9,8 @@ footer {
 footer a {
   text-decoration: none;
   color: #FBFBFB;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 footer a:hover,
