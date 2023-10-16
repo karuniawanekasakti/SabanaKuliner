@@ -1,17 +1,17 @@
 import data from '../../../public/data/DATA.json';
 
 class RestoList extends HTMLElement {
-  connectedCallback() {
-    this.cardContainer = document.createElement('div');
-    this.cardContainer.classList.add('detail');
-    this.appendChild(this.cardContainer); // Append the cardContainer to the DOM
-    this.render();
-  }
+    connectedCallback() {
+        this.cardContainer = document.createElement('div');
+        this.cardContainer.classList.add('detail');
+        this.appendChild(this.cardContainer); // Append the cardContainer to the DOM
+        this.render();
+    }
 
-  render() {
-    let restaurant = '';
-    data.restaurants.forEach(resto => {
-      restaurant += `
+    render() {
+        let restaurant = '';
+        data.restaurants.forEach((resto) => {
+            restaurant += `
       <div class="col"> 
         <div class="card">
             <div class="card-img">
@@ -35,9 +35,9 @@ class RestoList extends HTMLElement {
         </div>
       </div>
       `;
-    });
-    this.cardContainer.innerHTML = restaurant;
-  }
+        });
+        this.cardContainer.innerHTML = restaurant;
+    }
 }
 
 customElements.define('resto-list', RestoList);

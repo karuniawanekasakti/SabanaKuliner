@@ -1,10 +1,10 @@
 class AppBar extends HTMLElement {
-  connectedCallback() {
-    this.render();
-  }
+    connectedCallback() {
+        this.render();
+    }
 
-  render() {
-    this.innerHTML = `
+    render() {
+        this.innerHTML = `
     <nav id="nav" class="menu">
       <h1>
         <a href="./" title="Sabana Kuliner">Sabana Kuliner</a>
@@ -21,7 +21,7 @@ class AppBar extends HTMLElement {
       </ul>
     </nav>
     `;
-  }
+    }
 }
 
 customElements.define('app-bar', AppBar);
