@@ -1,10 +1,10 @@
 class AppBar extends HTMLElement {
-    connectedCallback() {
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    render() {
-        this.innerHTML = `
+  render() {
+    this.innerHTML = `
     <nav id="nav" class="menu">
       <h1>
         <a href="./" title="Sabana Kuliner">Sabana Kuliner</a>
@@ -14,14 +14,14 @@ class AppBar extends HTMLElement {
           <i class="fa-solid fa-bars"></i>
       </button>
       <ul class="menu-list">
-          <li><a href="./" title="Home">Home</a></li>
-          <li><a href="#" title="Favorite">Favorite</a></li>
+          <li><a href="#/explore" title="Home">Home</a></li>
+          <li><a href="#/favorite" title="Favorite">Favorite</a></li>
           <li><a href="https://github.com/karuniawanekasakti" title="About Us" target="_blank" rel="noreferrer">About
                   Us</a></li>
       </ul>
     </nav>
     `;
-    }
+  }
 }
 
 customElements.define('app-bar', AppBar);

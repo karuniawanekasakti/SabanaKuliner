@@ -3,23 +3,22 @@ import '../styles/main.css';
 import './views/components/_app-bar';
 import './views/components/_app-hero';
 import './views/components/_resto-list';
+import './views/components/_resto-detail';
+import './views/components/_resto-riview';
+import App from './views/app';
+import swRegister from './utils/sw-register';
 
-const nav = document.querySelector('#nav');
-
-window.addEventListener('scroll', () => {
-    const scrollPos = window.scrollY;
-
-    if (scrollPos > 20) {
-        nav.style.backgroundColor = '#C36A2D';
-    } else {
-        nav.style.backgroundColor = 'transparent';
-    }
+const app = new App({
+  button: document.querySelector('.menu-button'),
+  drawer: document.querySelector('#nav'),
+  content: document.querySelector('#content'),
 });
 
-const menu = document.querySelector('.menu');
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
 
-const menuButton = document.querySelector('.menu-button');
-
-menuButton.addEventListener('click', () => {
-    menu.classList.toggle('open');
+window.addEventListener('load', () => {
+  app.renderPage();
+  swRegister();
 });
