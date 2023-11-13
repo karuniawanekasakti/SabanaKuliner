@@ -2,6 +2,7 @@ import UrlParser from '../../routes/url-parser';
 import RestaurantSource from '../../data/restaurant-source';
 import { createRestoDetailTemplate, createRestoReviewTemplate, createRiviewFormTemplate } from '../templates/template-creator';
 import FavoriteButtonInitiator from '../../utils/favorite-btn-initiator';
+import CONFIG from '../../globals/config';
 
 const Detail = {
   async render() {
@@ -31,14 +32,69 @@ const Detail = {
     formRiview.innerHTML += createRiviewFormTemplate(restaurantById.restaurant);
 
     const form = document.querySelector('#form-review');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.querySelector('#name').value;
-      const review = document.querySelector('#review').value;
-      const id = document.querySelector('[name="id"]').value;
-      RestaurantSource.addReview({ id, name, review });
-      form.reset();
-    });
+    const openDB = indexedDB.open(CONFIG.DATABASE_NAME, CONFIG.DATABASE_VERSION);
+    openDB.onerror = function (error) {
+      console.error('Error opening the database:', error.target.error);
+    };
+
+    openDB.onsuccess = function (a) {
+      const db = a.target.result;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.querySelector('#name').value;
+        const review = document.querySelector('#review').value;
+        const id = document.querySelector('[name="id"]').value;
+
+        const data = {
+          id,
+          name,
+          review,
+        };
+
+        const transaction = db.transaction([CONFIG.OBJECT_STORE_NAME], 'readwrite');
+        const store = transaction.objectStore(CONFIG.OBJECT_STORE_NAME);
+
+        function refreshPage() {
+          window.location.reload();
+        }
+
+        transaction.oncomplete = function () {
+          // Transaction is complete; you can perform further actions here
+          console.log('Transaction completed');
+          // Display a success alert
+          window.alert('Review berhasil ditambahkan');
+          // Refresh the page and the review list
+          refreshPage();
+        };
+
+        transaction.onerror = function (event) {
+          console.error('Transaction error:', event.target.error);
+          // Display an error alert
+          window.alert('Review gagal ditambahkan');
+        };
+
+        // Add or update the review data in the object store
+        store.put(data);
+
+        // Send the review data to the API
+        try {
+          const response = await fetch(`${CONFIG.BASE_URL}review`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          });
+
+          if (!response.ok) {
+            window.alert('Gagal mengirim review ke API');
+          }
+        } catch (error) {
+          window.alert(`Error saat mengirim review ke API: ${error}`);
+        }
+      });
+    };
 
     FavoriteButtonInitiator.init({
       favoriteButtonContainer: document.querySelector('#favoriteButtonContainer'),

@@ -6,8 +6,10 @@ class RestoDetail extends HTMLElement {
   render() {
     this.innerHTML = `
 
-    <div id="resto-detail" class="row"></div>
-    <div id="favoriteButtonContainer"></div>
+    <div id="content" tabindex="0">
+      <div id="resto-detail" class="row"></div>
+      <div id="favoriteButtonContainer"></div>
+    </div>
     `;
   }
 }
