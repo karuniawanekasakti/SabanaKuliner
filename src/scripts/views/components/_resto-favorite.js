@@ -5,9 +5,9 @@ class RestoFavorite extends HTMLElement {
 
   render() {
     this.innerHTML = `
-    <div id="content" tabindex="0">
+    <main id="content" tabindex="0">
       <div class="detail"></div>
-    </div>
+    </main>
     `;
   }
 }

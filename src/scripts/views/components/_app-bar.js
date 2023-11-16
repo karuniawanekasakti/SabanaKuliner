@@ -10,8 +10,7 @@ class AppBar extends HTMLElement {
         <a href="./" title="Sabana Kuliner">Sabana Kuliner</a>
       </h1>
       <button class="menu-button" title="canvas-button" aria-label="canvas-button">
-          <i class="fa-solid fa-x"></i>
-          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa fa-bars"></i>
       </button>
       <ul class="menu-list">
           <li><a href="#/explore" title="Home">Home</a></li>
