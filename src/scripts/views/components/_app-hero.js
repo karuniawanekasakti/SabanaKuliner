@@ -7,8 +7,8 @@ class AppHero extends HTMLElement {
     this.innerHTML = `
     <div class="hero">
       <picture>
-        <source media="(max-width: 600px)" srcset="../images/heros/hero-image_2.jpg">
-        <img src="../images/heros/hero-image_2.jpg"
+        <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2.jpg">
+        <img src="./images/heros/hero-image_2.jpg"
           alt="Hero Image">
       </picture>
       <div class="inner">

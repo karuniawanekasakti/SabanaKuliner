@@ -64,13 +64,13 @@
         cursor: pointer;
     }
     
-    .menu i.fa-times,
+    /* .menu i.fa-x,
     .menu.open i.fa-bars {
         display: none;
         animation: enter 0.8s;
-    }
+    } */
   
-    .menu.open i.fa-times,
+    .menu.open i.fa-x,
     .menu i.fa-bars {
         display: block;
         animation: enter 0.8s;

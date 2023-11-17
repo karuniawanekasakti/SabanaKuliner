@@ -1,23 +1,27 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
-import '../scripts/views/components/_app-bar';
+import './views/components/_app-bar';
 import './views/components/_app-hero';
-import './views/components/_resto-list'
+import './views/components/_resto-list';
+import './views/components/_resto-detail';
+import './views/components/_resto-riview';
+import App from './views/app';
+import swRegister from './utils/sw-register';
 
-const nav = document.querySelector('#nav');
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
-window.addEventListener('scroll', () => {
-  const scrollPos = window.scrollY;
-  if (scrollPos > 20) {
-    nav.style.backgroundColor = '#C36A2D';
-  }else {
-    nav.style.backgroundColor = 'transparent';
-  }
-})
+const app = new App({
+  button: document.querySelector('.menu-button'),
+  drawer: document.querySelector('#nav'),
+  content: document.querySelector('#content'),
+});
 
-const menu = document.querySelector(".menu");
-const menuButton = document.querySelector(".menu-button");
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
 
-menuButton.addEventListener("click", () => {
-    menu.classList.toggle("open");
+window.addEventListener('load', () => {
+  app.renderPage();
+  swRegister();
 });
