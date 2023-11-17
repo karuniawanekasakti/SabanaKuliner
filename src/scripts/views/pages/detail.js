@@ -60,18 +60,11 @@ const Detail = {
         }
 
         transaction.oncomplete = function () {
-          // Transaction is complete; you can perform further actions here
           console.log('Transaction completed');
-          // Display a success alert
-          window.alert('Review berhasil ditambahkan');
-          // Refresh the page and the review list
-          refreshPage();
         };
 
         transaction.onerror = function (event) {
           console.error('Transaction error:', event.target.error);
-          // Display an error alert
-          window.alert('Review gagal ditambahkan');
         };
 
         // Add or update the review data in the object store
@@ -88,7 +81,10 @@ const Detail = {
           });
 
           if (!response.ok) {
-            window.alert('Gagal mengirim review ke API');
+            window.alert('Review gagal ditambahkan');
+          } else {
+            window.alert('Review berhasil ditambahkan');
+            refreshPage();
           }
         } catch (error) {
           window.alert(`Error saat mengirim review ke API: ${error}`);

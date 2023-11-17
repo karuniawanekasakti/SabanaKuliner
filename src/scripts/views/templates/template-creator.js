@@ -1,7 +1,7 @@
 import CONFIG from '../../globals/config';
 
 const createRestoItemTemplate = (resto) => `
-  <div class="col">
+  <div class="col" id="card-item">
       <div class="card">
           <div class="card-img">
               <div class="city-label">
